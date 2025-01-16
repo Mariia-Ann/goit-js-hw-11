@@ -25,10 +25,21 @@ a {
 
 button {
   cursor: pointer;
+  border: 0;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+input:hover, input:active, input:focus {
+  background-color: inherit;
+  outline: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
 }
