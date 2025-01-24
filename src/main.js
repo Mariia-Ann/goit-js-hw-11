@@ -16,8 +16,13 @@ searchForm.addEventListener('submit', handleSearch);
 function handleSearch(event) {
   event.preventDefault();
   const form = event.currentTarget;
-  const query = form.elements.query.value;
+  const query = form.elements.query.value.trim();
 
+  if (!query) {
+    showErrorMessage('Please enter a valid search query.');
+    return;
+  }
+  
   cardContainer.innerHTML = '';
 
   showLoadingIndicator(loading);
